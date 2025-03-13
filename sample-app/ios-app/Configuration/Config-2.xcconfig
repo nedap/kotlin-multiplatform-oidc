@@ -1,5 +1,5 @@
 TEAM_ID=3RDHVJ3898
-BUNDLE_ID=com.nedap.healthcare.kerberos.demo-1
-APP_NAME=OIDC Demo 1
+BUNDLE_ID=com.nedap.healthcare.kerberos.demo-2
+APP_NAME=OIDC Demo 2
 MODULE_NAME=shared
 REDIRECT_SCHEME=com.nedap.healthcare.logistics.demo:\/\/auth

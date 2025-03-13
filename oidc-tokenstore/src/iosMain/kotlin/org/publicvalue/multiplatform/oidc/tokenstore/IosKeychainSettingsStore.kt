@@ -10,6 +10,7 @@ import platform.Foundation.NSBundle
 import platform.Security.kSecAttrAccessible
 import platform.Security.kSecAttrAccessibleAfterFirstUnlock
 import platform.Security.kSecAttrService
+import platform.Security.kSecAttrAccessGroup
 import kotlin.experimental.ExperimentalObjCRefinement
 
 @OptIn(ExperimentalObjCRefinement::class, ExperimentalSettingsImplementation::class)
@@ -19,7 +20,10 @@ class IosKeychainSettingsStore: SettingsStore {
     @OptIn(ExperimentalForeignApi::class, ExperimentalSettingsApi::class)
     private val keyChainSettings by lazy {
         KeychainSettings(
-            kSecAttrService to CFBridgingRetain("${NSBundle.mainBundle.bundleIdentifier}.auth"),
+//            kSecAttrService to CFBridgingRetain("${NSBundle.mainBundle.bundleIdentifier}.auth"),
+//            kSecAttrService to CFBridgingRetain("3RDHVJ3898.${NSBundle.mainBundle.bundleIdentifier}"),
+            kSecAttrService to CFBridgingRetain("com.nedap.healthcare.auth"), // acts as a namespace. Without it, all (shared) stored credentials would exist in a flat structure, making it hard to separate them.
+//            kSecAttrAccessGroup to CFBridgingRetain ("3RDHV33898.com.nedap.healthcare.milo.shared"),
             kSecAttrAccessible to kSecAttrAccessibleAfterFirstUnlock,
         )
     }

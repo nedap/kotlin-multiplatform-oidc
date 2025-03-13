@@ -25,7 +25,7 @@ android {
         versionName = "1.0"
 
         addManifestPlaceholders(
-            mapOf("oidcRedirectScheme" to "org.publicvalue.multiplatform.oidc.sample")
+            mapOf("oidcRedirectScheme" to "com.nedap.healthcare.logistics.demo")
         )
     }
 }
